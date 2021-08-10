@@ -1,0 +1,168 @@
+// Primary SASS file for the Little project - VS Code Integrated for auto compile. 
+
+// Variables
+$gradientBackground : linear-gradient(0deg, rgba(0,172,193,0.19324816108083853) 0%, rgba(255,255,255,1) 100%);
+$shadow : 0px 6px 5px 0px rgba(0,0,0,0.25);
+$inputBackground : #F4F4F4;
+$inputBorder : #9D9D9D;
+$inputTextColour : #95A2AE;
+$brandBlue : #0088BE;
+
+
+// Fonts
+h1,h2,h3,h4,h5,h6,p,a,button,input,span,select, option{
+    font-family: Arial, sans-serif!important;
+}
+
+// Global Containers
+
+body{
+    margin:0!important;
+}
+
+.wrapper{
+    width:100vw;
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.cqc{
+    width:100%;
+    max-width:1100px;
+}
+
+.flex_wrap{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.body_inner{
+    background: $gradientBackground;
+}
+
+// Navigation Bar
+
+.logo{
+    width:100%;
+    max-width:350px;
+    padding:20px 0 20px 0;
+    svg{
+        width:100%;
+    }
+}
+
+// Page Title
+.page_title{
+    padding:30px 0 30px 0;
+    h1{
+        font-weight:300;
+        font-size:2.5em
+    }
+}
+
+// Ajax Filters
+.ajax_form{
+    width:100%;
+    background-color:White;
+    padding:15px;
+    margin:0 0 25px 0;
+    box-shadow: $shadow;
+}
+
+#__ajax_filter{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    .__a_form_i{
+        width:190px;
+        align-self:center;
+        margin:10px 15px 10px 15px;
+        span{
+            display:block;
+            font-weight:700;
+            margin:0 0 7px 0;
+            font-size: 0.85em;
+
+        }
+        input, select{
+            width:100%;
+        }
+    }
+    .__a_form_wrap{
+        input, select{
+            padding:5px;
+            background-color:$inputBackground;
+            border: solid 1px $inputBorder;
+            border-radius:2.92px;
+            color: $inputTextColour;
+            option{
+                color:black;
+            }
+        }
+    }
+}
+
+.__a_form_search_text{
+    border:none;
+    border-bottom:solid #32313A 1px;
+    outline:none;
+    position:relative;
+    input{
+        border:none;
+        outline:none;
+        width:80%;
+        color:black;
+        font-weight:600;
+    }
+    input::placeholder{
+        color:black!important;
+    }
+    .search_icon{
+        position:absolute;
+        width:15px;
+        right:0;
+        top:0;
+
+    }
+
+}
+
+.results_before{
+    margin:0 0 20px 0;
+    .__bf_right{
+        flex-grow:1;
+        text-align:right;
+        align-self:center;
+        span{
+            font-size:0.75em;
+            font-weight:700;
+            color:#32313A;
+            letter-spacing:1px;
+        }
+        select{
+            background-color:transparent;
+            border:none;
+            outline:none;
+            color: $brandBlue;
+            font-weight:700;
+            option{
+                color: $brandBlue;
+                font-weight:700;
+            }
+        }
+    }
+    .__bf_left span{
+        font-size:1.2em;
+        align-self:center;
+    }
+
+}
+
+.filter_order{
+    display:none;
+}
+
