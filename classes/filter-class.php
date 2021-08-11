@@ -15,7 +15,7 @@ class ajaxFilter {
     );
 
     public static $bedrooms = array(
-        array( 'name' => 'No Minimum', 'value' => 999 ),
+        array( 'name' => 'No Minimum', 'value' => 0 ),
         array( 'name' => '1 Bedroom', 'value' => 1 ),
         array( 'name' => '2 Bedrooms', 'value' => 2 ),
         array( 'name' => '3 Bedrooms', 'value' => 3 ),
@@ -24,7 +24,7 @@ class ajaxFilter {
     );
 
     public static $price = array(
-        array( 'name' => 'No Maximum', 'value' => 99999999999999999 ),
+        array( 'name' => 'No Maximum', 'value' => 0 ),
         array( 'name' => '£50,000', 'value' => 50000 ),
         array( 'name' => '£100,000', 'value' => 100000 ),
         array( 'name' => '£150,000', 'value' => 150000 ),
@@ -46,16 +46,16 @@ class ajaxFilter {
         echo '<section class="wrapper"><div class="cqc"><div class="ajax_form">';
 
         // Form Start
-        echo '<form id="__ajax_filter" method="POST" action="/includes/ajax-filter.php">';
+        echo '<form id="__ajax_filter" method="POST" name="propFilter" action="/includes/ajax-filter.php">';
 
         // Search Input
-        echo '<div class="__a_form_i __a_form_search_text"><input type="text" name="search_input" class="search_input_text" placeholder="SEARCH AGAIN"/><span class="search_icon"> ' . file_get_contents(self::$searchIcon) . '</span></div>';
+        echo '<div class="__a_form_i __a_form_search_text"> <input type="text" name="search_input" class="search_input_text autosubmit" placeholder="SEARCH AGAIN"/><span class="search_icon"> ' . file_get_contents(self::$searchIcon) . '</span></div>';
 
         // Location Input
-        echo '<div class="__a_form_i __a_form_wrap"><span>POSTCODE OR TOWN</span><input type="text" name="location" placeholder="e.g LS1 2ED"></div>';
+        echo '<div class="__a_form_i __a_form_wrap"><span>POSTCODE OR TOWN</span><input class="autosubmit text__" type="text" name="location" placeholder="e.g LS1 2ED"></div>';
 
         // Radius Input
-        echo '<div class="__a_form_i __a_form_wrap"><span>SEARCH RADIUS</span><select name="radius">';
+        echo '<div class="__a_form_i __a_form_wrap"><span>SEARCH RADIUS</span><select class="autosubmit select__" name="radius">';
         if ( is_array(self::$radius) ) {
             foreach (self::$radius as $k => $option) {
                 if ( $k == 0 ) { $class = self::$defaultSelect; } else { $class = NULL; }
@@ -65,7 +65,7 @@ class ajaxFilter {
         echo '</select></div>';
 
         // Minimum Bedrooms
-        echo '<div class="__a_form_i __a_form_wrap"><span>MIN. BEDROOMS</span><select name="bedrooms">';
+        echo '<div class="__a_form_i __a_form_wrap"><span>MIN. BEDROOMS</span><select class="autosubmit select__" name="bedrooms">';
         if ( is_array(self::$bedrooms) ) {
             foreach (self::$bedrooms as $k => $option) {
                 if ( $k == 0 ) { $class = self::$defaultSelect; } else { $class = NULL; }
@@ -75,7 +75,7 @@ class ajaxFilter {
         echo '</select></div>';
 
         // Max Price
-        echo '<div class="__a_form_i __a_form_wrap"><span>MAX. PRICE</span><select name="price">';
+        echo '<div class="__a_form_i __a_form_wrap"><span>MAX. PRICE</span><select class="autosubmit select__" name="price">';
         if ( is_array(self::$price) ) {
             foreach (self::$price as $k => $option) {
                 if ( $k == 0 ) { $class = self::$defaultSelect; } else { $class = NULL; }

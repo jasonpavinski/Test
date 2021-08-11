@@ -15,7 +15,7 @@ class pageTitle {
 
     // Methods 
     function render(){
-         echo '<div class="wrapper"><div class="cqc flex_wrap"><div class="page_title"><h1>' . $this->title . '</h1></div><div></section>'; 
+         echo '<div class="wrapper"><div class="cqc flex_wrap"><div class="page_title"><h1>' . $this->title . '</h1></div></div></div>'; 
     }
 
 }

@@ -11,7 +11,4 @@ $pageTitle->render();
 ajaxFilter::renderForm();
 filterBefore::render();
 filterResults::initialise();
-
-
-
 echo '</div>';

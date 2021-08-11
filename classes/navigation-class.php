@@ -6,14 +6,18 @@
 
 class navigation {
 
-    // Static Properties
-    public static $brandingPath = '././assets/svgs/logo.svg';
+    public static $brandingPath = '././assets/images/logo.png';
     public static $homeURL = 'http://localhost:8001';
 
-    // Static Methods
     public static function render() {
-        echo '<section class="wrapper"><div class="cqc flex_wrap"><div class="logo"><a href="' . self::$homeURL . '">' . file_get_contents(self::$brandingPath) . '</a></div></div></section>';
+        echo '<section class="wrapper"><div class="cqc flex_wrap"><div class="logo"><a href="' . self::$homeURL . '"><img src="' . self::$brandingPath . '" alt="iglu Estates & Lettings"/></a></div></div></section>';
     }
+
+    public static function applyBackground(){
+        echo '<div data-aos="fade-down" data-aos-duration="1500" class="background_gradient"></div>';
+    }
+
+
 
 }
 
